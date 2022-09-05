@@ -16,46 +16,59 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Easy Translation').tr(),
       ),
-      body: Column(mainAxisAlignment: MainAxisAlignment.end,
-        children: [
+      body: Container(padding: EdgeInsets.all(20),
+        child: Column(mainAxisAlignment: MainAxisAlignment.end,
+          children: [
 
-          Expanded(child: Center(
-            child: Text('welcome').tr(),
-          )),
-          Row(
-            children: [
-              Expanded(child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  height: 45,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.redAccent),
-                  child: FlatButton(onPressed: (){
-                    context.setLocale(Locale('uz', 'UZ'));
-                  }, child: Text('Uz')),
+            Expanded(child: Center(
+              child: Text('welcome').tr(),
+            )),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 45,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.redAccent),
+                    child: FlatButton(onPressed: (){
+                      context.setLocale(Locale('uz', 'UZ'));
+                    }, child: Text('Uz')),
+                  ),
                 ),
-              )),
-              Expanded(child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  height: 45,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.blueAccent),
-                  child: FlatButton(onPressed: (){context.setLocale(Locale('ru', 'RU'));}, child: Text('Ru')),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Container(
+                    height: 45,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.blueAccent),
+                    child: FlatButton(onPressed: (){
+                      context.setLocale(Locale('ru', 'RU'));}, child: Text('Ru')),
+                  ),
                 ),
-              )),
-              Expanded(child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(width: double.infinity,
-                  height: 45,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.green),
-                  child: FlatButton(onPressed: (){
-                    context.setLocale(Locale('en', 'US'));
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Container(width: double.infinity,
+                    height: 45,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.green),
+                    child: FlatButton(onPressed: (){
+                      context.setLocale(Locale('en', 'US'));
 
-                    }, child: Text('Eng')),
+                      }, child: Text('Eng')),
+                  ),
                 ),
-              )),
-            ],
-          ),
-        ],
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Container(width: double.infinity,
+                    height: 45,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.yellow),
+                    child: FlatButton(onPressed: (){
+                      context.setLocale(Locale('fr', 'FR'));
+
+                    }, child: Text('French')),
+
+                )),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
